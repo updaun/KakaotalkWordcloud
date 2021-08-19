@@ -1,0 +1,6 @@
+wordcloud
+konlpy
+numpy
+pandas
+matplotlib
+pillow
