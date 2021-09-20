@@ -16,7 +16,7 @@ def make_wordcloud(input_path):
     no_meaning_list = ''         # 불용어 추가하기 (없으면 그대로 둘 것) * 예시 : '안녕' '안녕|잘가'  '안녕|잘가|잘자'
     word_length = 1              # 단음절 수 삭제 기준 (변경 가능)
 
-    words_num = 50               # 워드클라우드 표시 단어 수
+    words_num = 100               # 워드클라우드 표시 단어 수
 
     # 파일명 가져오기
 
@@ -110,12 +110,12 @@ def make_wordcloud(input_path):
         img = Image.open(image_PATH)        # 이미지 있을 경우 경로 입력
         back_mask = np.array(img)           # 넘파이 배열로 변환
 
-        wc = WordCloud(font_path='./fonts/NanumBarunpenR.otf',background_color='white', max_words= words_num, mask=back_mask)           
+        wc = WordCloud(font_path='./fonts/NanumBarunpenR.otf',background_color='white', max_words= words_num, mask=back_mask, colormap='spring')           
         wc.generate_from_frequencies(my_dict)
 
     except :
 
-        wc = WordCloud(font_path='./fonts/NanumBarunpenR.otf',background_color='white', max_words = words_num)         
+        wc = WordCloud(font_path='./fonts/NanumBarunpenR.otf',background_color='white', max_words = words_num, colormap='spring')         
         wc.generate_from_frequencies(my_dict)
 
 
